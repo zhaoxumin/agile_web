@@ -1,0 +1,350 @@
+@charset "utf-8";
+html,
+body {
+  background: #fff;
+  min-height: 100%;
+}
+
+body {
+  padding-top: 66px;
+}
+
+.w1200 {
+  width: 1200px;
+  margin: 0 auto;
+}
+
+.w1200pw {
+  margin: 0 auto;
+}
+
+.w1600 {
+  width:90%;
+  margin: 0 auto;
+}
+
+header {
+  height: 66px;
+  background: #fff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  box-shadow: 0 5px 15px #eee;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, .1);
+  z-index: 10;
+}
+
+header .logo {
+  float: left;
+  line-height: 62px;
+}
+
+header .logo img {
+  max-height: 52px;
+}
+
+.download {
+  border: 1px solid #2883FF;
+  color: #2883FF;
+  padding: 0 22px;
+  font-size: 0;
+  display: block;
+  border-radius: 40px;
+  margin-top: 13px;
+}
+
+.download span {
+  font-size: 14px;
+  color: #2883FF;
+  padding-left: 15px;
+  background: url("../img/ico-dwon.png") no-repeat left center;
+  background-size: 12px;
+  line-height: 38px;
+}
+
+.download:hover {
+  background-color: #E4EEFF;
+}
+
+.download:active {
+  background-color: #C0D7FF;
+}
+
+
+/*底部样式*/
+
+footer {
+  background: #181818;
+  height: 56px;
+  line-height: 56px;
+  text-align: center;
+  font-size: 14px;
+  color: #f1f1f1;
+}
+
+footer .company {
+  font-size: 14px;
+  color: #c4c2c2;
+  padding: 0;
+  padding-top: 25px;
+}
+
+footer .copyright {
+  font-size: 12px;
+  color: #949494;
+  margin-top: 12px;
+}
+
+.mr-none {
+  margin-right: 0!important;
+}
+
+
+/* 页面 */
+
+.index-line.bg2 {
+  height: 372px;
+  background: url("../img/bg2.png") no-repeat top center;
+}
+
+.bg2-rp {
+  background: url("../img/bg2-rp.png") repeat-x;
+}
+
+.index-line.bg3 {
+  height: 675px;
+  background: #FFFFFF;
+}
+
+.bg3-rp {
+  background:#FFFFFF;
+}
+
+
+.function-ctt {
+  padding-top: 15px;
+}
+
+.function-btn {
+  padding-top: 5px;
+  height: 50px;
+}
+
+.function-h {
+  line-height: 110px;
+  color: #fff;
+  font-size: 24px;
+  text-align: center;
+}
+
+.function-h2 {
+  line-height: 110px;
+  color: #DCDCDC;
+  font-size: 20px;
+  text-align: center;
+}
+
+.function-h3 {
+  line-height: 110px;
+  color: #808080;
+  font-size: 50px;
+  text-align: center;
+}
+
+.function-list {
+  overflow: hidden;
+  margin-top: 30px;
+}
+
+.function-list li {
+  width: 40%;
+  float: left;
+}
+
+.function-list li+li {
+  margin-left: 20%;
+}
+
+.function-list li img {
+  display: block;
+  margin: 0 auto;
+}
+
+.function-list li p {
+  font-size: 18px;
+  color: #fff;
+  margin-top: 22px;
+  text-align: center;
+}
+
+.banner-suc{
+  height: 281px;
+  background: url("../img/banner-bg.png") no-repeat top center;
+  background-color: #2471ff;
+}
+
+.banner-suc-cxt {
+  padding-top: 25px;
+}
+
+.banner-suc-cxt img {
+  display: block;
+  margin: 0 auto;
+}
+
+.banner-suc-cxt h3 {
+  font-size: 32px;
+  line-height: 1;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 15px;
+  color: #fff;
+}
+
+.banner-suc-cxt p {
+  font-size: 18px;
+  line-height: 1.5;
+  text-align: center;
+  margin-top: 13px;
+  color: #fff;
+}
+
+.banner-suc-cxt p a {
+  text-decoration: underline;
+  color: #fff;
+}
+
+.btn-down {
+  display: block;
+  width: 205px;
+  line-height: 60px;
+  color: #161D31;
+  background-color: #fff;
+  text-align: center;
+  margin: 0 auto;
+  font-size: 24px;
+  border-radius: 60px;
+  margin-top: 13px;
+}
+
+.btn-down:hover {
+  background-color: #E4EEFF;
+}
+
+.btn-down:active {
+  background-color: #C0D7FF;
+}
+
+.main-content {
+  padding: 40px 0 30px;
+}
+
+.install-guide-main h2 {
+  color: #373737;
+  font-size: 26px;
+  text-align: center;
+}
+
+.install-guide-ul {
+  overflow: hidden;
+  margin-top: 30px;
+}
+
+.install-guide-ul li {
+  width: 50%;
+  float: left;
+  text-align: center;
+}
+
+.install-guide-pic {
+  display: inline-block;
+  text-align: left;
+}
+
+.install-guide-pic>div {
+  display: none;
+}
+
+.install-guide-pic>div.current {
+  display: block;
+}
+
+.install-guide-pic>div h4 {
+  font-size: 20px;
+  color: #161D31;
+  line-height: 1.5;
+  margin-bottom: 10px;
+}
+
+.install-guide-pic>div img {
+  display: block;
+}
+
+.install-guide-text {
+  text-align: left;
+  display: inline-block;
+  padding-top: 60px;
+}
+
+.install-guide-text h3 {
+  color: #161D31;
+  font-size: 24px;
+  line-height: 1.5;
+}
+
+.step-text p {
+  font-size: 16px;
+  color: #6F6F6F;
+  line-height: 2;
+  margin-top: 10px;
+}
+
+.step-text p.current {
+  color: #0089FF;
+}
+
+.install-guide-step {
+  font-size: 0;
+  margin-top: 35px;
+}
+
+.install-guide-step dd {
+  width: 20%;
+  display: inline-block;
+  position: relative;
+  height: 5px;
+  background-color: #EBEBEB;
+}
+
+.install-guide-step dd span {
+  background: #0089FF;
+  width: 0;
+  height: 5px;
+  display: block;
+}
+
+.install-guide-step dd p {
+  position: absolute;
+  top: 10px;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  color: #8A8A8A;
+  font-size: 14px;
+}
+
+.install-guide-step dd.current span {
+  width: 100%;
+  transition: all 2s;
+  -webkit-transition: all 2s;
+  -moz-transition: all 2s;
+}
+
+.install-guide-step dd.Past span {
+  width: 100%;
+}
+
+.install-guide-step dd.current p {
+  color: #3F3F3F;
+}
