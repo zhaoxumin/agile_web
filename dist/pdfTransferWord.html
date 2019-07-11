@@ -1,0 +1,518 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <style type="text/css">
+    .previewpdf {
+      height: 500px;
+      border: 1px solid #cdcdcd;
+      width: 94%;
+      float: right;
+    }
+
+    .preview_pdficon {
+      height: 48px;
+      border: 1px solid #cdcdcd;
+      width: 48px;
+      float: left;
+    }
+
+    .previewword {
+      height: 500px;
+      border: 1px solid #cdcdcd;
+      width: 94%;
+      float: left;
+    }
+
+    .preview_wordicon {
+      height: 48px;
+      border: 1px solid #cdcdcd;
+      width: 48px;
+      float: right;
+    }
+
+    .btn_pdf {
+      display: inline-block;
+      width: 304px;
+      height: 50px;
+      text-align: center;
+      font-size: 0;
+      /*background-color: #F4A460;*/
+      background-color: #B22222;
+      border-radius: 4px;
+      float: left;
+    }
+
+    .btn_pdf span {
+      display: inline-block;
+      padding-left: 34px;
+      line-height: 50px;
+      background: url("img/icon_fangxiang.png") no-repeat left center;
+      font-size: 20px;
+      color: #fff;
+    }
+
+    .btn_pdf:hover {
+      background-color: #B22222;
+    }
+
+    .btn_pdf:active {
+      background-color: #B22222;
+    }
+
+    .img-word {
+      float: right
+    }
+
+    .img-pdf {
+      float: left
+    }
+
+    .btn_word {
+      display: inline-block;
+      width: 304px;
+      height: 50px;
+      text-align: center;
+      font-size: 0;
+      /*background-color: #F4A460;*/
+      background-color: #4169E1;
+      border-radius: 4px;
+      float: right;
+    }
+
+    .btn_word span {
+      display: inline-block;
+      padding-left: 34px;
+      line-height: 50px;
+      background: url("img/ico-dwon-white.png") no-repeat left center;
+      font-size: 20px;
+      color: #fff;
+    }
+
+    .btn_word:hover {
+      background-color: #4169E1;
+    }
+
+    .btn_word:active {
+      background-color: #4169E1;
+    }
+
+    .iframeWord {
+      width: 100%;
+      height: 100%;
+    }
+
+    .preview-btn-pdf {
+      float: left;
+    }
+
+    .preview-btn-word {
+      float: right;
+    }
+
+    .container {
+      margin: 0 auto;
+      width: 400px;
+      height: 150px;
+    }
+  </style>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="apple-touch-icon" href="img/icon/agile_64.ico">
+  <!-- Place favicon.ico in the root directory -->
+
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" type="text/css" href="css/down.css">
+  <link rel="stylesheet" type="text/css" href="css/base.css">
+  <link rel="stylesheet" type="text/css" href="css/index.css">
+  <script type="text/javascript" src="js/vendor/jquery-3.4.1.min.js"></script>
+  <script type="text/javascript" src="js/jquery.media.js"></script>
+  <script type="text/javascript" src="js/pdfobject.min.js"></script>
+  <meta name="theme-color" content="#fafafa">
+</head>
+<body>
+<header>
+  <div class="clearfix w1200">
+    <a class="logo" id="logo" logo-type="small" href="index.html"><img
+      alt="" src="img/df_logo_sm.png"></a>
+    <div class="fr">
+      <ul class="nav-list">
+        <li>
+          <a href="index.html" name="HomePageButton01">首页</a>
+        </li>
+        <li>
+          <a href="pdfTransferWord.html" name="HomePageButton02">PDF转Word</a>
+        </li>
+        <li>
+          <a href="wordTransferPDF.html" name="HomePageButton03">Word转PDF</a>
+        </li>
+        <li>
+          <a href="pdfTransferJpg.html" name="HomePageButton04">PDF转JPG</a>
+        </li>
+        <li>
+          <a href="imagefTransferPDF.html" name="HomePageButton05">图片转PDF</a>
+        </li>
+        <li>
+          <a href="editPDF.html" name="HomePageButton05">PDF编辑</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</header>
+<!-- Add your site or application content here -->
+<section class="banner-suc convertor">
+  <div class="w1200">
+    <div class="banner-suc-cxt">
+      <img src="" alt="">
+      <h3>感谢您使用agile PDF转换Word</h3>
+      <p>agile PDF转Word更加快捷，高保真输出。</p>
+    </div>
+  </div>
+  </div>
+</section>
+
+<div class="bg3-rp">
+  <section class="index-line bg3">
+    <div class="w1600 function-ctt">
+      <div class="flt">
+        <div id="pdf" class="previewpdf"></div>
+      </div>
+      <input type="file" name="file" id="fileUpdate-input" style="display: none"/>
+      <div class="function-text-center">
+        <!--<a type="submit" name="submit" id="fileUpdate-button" class="btn_pdf"><span>选择需要转换的PDF文件</span></a>-->
+      </div>
+      <div class="frt">
+        <div id="word" class="previewword">
+          <iframe id="draggable" class="iframeWord">
+          </iframe>
+        </div>
+      </div>
+      <!--<div class="function-text-center">-->
+      <!--&lt;!&ndash;<a name="DownLoadButton" href="javascript:download();" class="btn_word"><span>下载word文件</span></a>&ndash;&gt;-->
+      <!--&lt;!&ndash;<input type="text" name="downloadUrlId" id="downloadUrlId" style="display: none">&ndash;&gt;-->
+      <!--</div>-->
+      <!--<canvas id="myCanvas" width="304" height="150">您的浏览器不支持canvas！</canvas>-->
+      <div class="preview-btn-pdf">
+        <div class="function-text-center-pdf">
+          <a type="submit" name="submit" id="fileUpdate-button" class="btn_pdf"><span>上传PDF文件</span></a>
+        </div>
+        <div id="pdficon" class="preview_pdficon"><img class="img-pdf" src="img/transfer/pdf.png" alt=""></div>
+      </div>
+      <div class="container">
+        <canvas id="myCanvas" class="canvas" width="400" height="150">您的浏览器不支持canvas！</canvas>
+      </div>
+      <div class="preview-btn-word">
+        <div class="function-text-center-word">
+          <div id="wordicon" class="preview_wordicon">
+            <img class="img-word" src="img/transfer/word.png" alt="">
+          </div>
+          <a name="DownLoadButton" href="javascript:download();" class="btn_word"><span>下载word文件</span></a>
+          <input type="text" name="downloadUrlId" id="downloadUrlId" style="display: none">
+          <input type="text" name="downloadUrl" id="downloadUrl" style="display: none">
+        </div>
+      </div>
+    </div>
+
+
+  </section>
+</div>
+
+<footer class="bottom">
+  <p>
+    <span id="company">爱乆科技有限公司</span>
+    <span id="copyright"> 版权所有 <a class="copyright_link" style="color:inherit;" target="_blank"
+                                  href="http://www.beian.miit.gov.cn/">浙ICP备xxxxxxx号</a></span></p>
+</footer>
+
+<div class="side-box">
+  <div class="ysf-icon" onclick="">
+    <p>在线客服</p>
+    <i></i>
+  </div>
+</div>
+</body>
+<script type="text/javascript">
+  bfbx = 0;
+  bfby = 0;
+  bfbz = 0;
+  ycall = 1;
+  time_z = 30;
+  var tx;
+  var ty;
+  var tz;
+  var c;
+  //上传文件处理
+  var fileUpdate_button = document.getElementById("fileUpdate-button");
+  var fileUpdate_input = document.getElementById("fileUpdate-input");
+  var downloadUrlId = document.getElementById("downloadUrlId");
+  var downloadUrl = document.getElementById("downloadUrl").value;
+  fileUpdate_button.onclick = function () {
+    clearCanvas();
+    window.clearInterval(c);
+    StartX(0);
+    StartY(0);
+    ycall = 1;
+    PDFObject.embed("", "#pdf");
+    document.getElementById("draggable").src = "";
+    time_z=30;
+    downloadUrl = "";
+    fileUpdate_input.value="";
+    fileUpdate_input.click();
+  }
+
+  function clearCanvas() {
+    var cxt = document.getElementById("myCanvas").getContext("2d");
+    cxt.clearRect(0, 0, 400, 150);
+  }
+
+  fileUpdate_input.onchange = function () {
+    var file_obj = fileUpdate_input.files[0];
+    var fd = new FormData();
+    fd.append('file', file_obj);
+    $.ajax({
+      url: 'http://47.96.187.3:8888/agile/transfer/upload/pdf',
+      type: 'POST',
+      data: fd,
+      dataType: 'json',
+      contentType: false,
+      processData: false,
+      success: function (msg) {
+        if (msg.result == 1) {
+          downloadUrlId = msg.data.id;
+          StartX(100);
+          pdfUrl(msg.data.id);
+        } else {
+          alert("上传操作失败");
+        }
+      },
+      error: function (msg) {
+        /*弹出jqXHR对象的信息*/
+      }
+    });
+  }
+
+  function pdfUrl(id) {
+    var url = "http://47.96.187.3:8888/agile/transfer/pdf?id=" + id;
+    $.ajax({
+      url: url,
+      type: 'GET',
+      dataType: 'text',
+      contentType: false,
+      processData: false,
+      success: function (data) {
+        PDFObject.embed(data, "#pdf");
+      },
+      error: function (data) {
+        alert("预览加载失败");
+        /*弹出jqXHR对象的信息*/
+      }
+    });
+  }
+
+  function wordUrl() {
+    var url = "http://47.96.187.3:8888/agile/transfer/word?id=" + downloadUrlId;
+    $.ajax({
+      url: url,
+      type: 'GET',
+      dataType: 'text',
+      contentType: false,
+      processData: false,
+      success: function (data) {
+        if (data != null && data != "") {
+          var url = "https://view.officeapps.live.com/op/view.aspx?src=" + data;
+          document.getElementById("draggable").src = url;
+          downloadUrl = url;
+        }
+      },
+      error: function (data) {
+        if (ycall >= 1) {
+          window.clearInterval(c);
+          alert("自动转换失败，请刷新重试");
+          StartZ(0);
+        }
+        ycall--;
+      }
+    });
+  }
+
+  function download() {
+    var userAgent = navigator.userAgent; //取得浏览器的userAgent字符串
+    var isOpera = userAgent.indexOf("Opera") > -1; //判断是否Opera浏览器
+    var isIE = userAgent.indexOf("compatible") > -1
+      && userAgent.indexOf("MSIE") > -1 && !isOpera || userAgent.indexOf("Trident") > -1; //判断是否IE浏览器
+    var isEdge = userAgent.indexOf("Edge") > -1; //判断是否IE的Edge浏览器
+    var isFF = userAgent.indexOf("Firefox") > -1 && !isEdge; //判断是否Firefox浏览器
+    var isSafari = userAgent.indexOf("Safari") > -1
+      && userAgent.indexOf("Chrome") == -1 && !isEdge; //判断是否Safari浏览器
+    var isChrome = userAgent.indexOf("Chrome") > -1
+      && userAgent.indexOf("Safari") > -1 && !isEdge; //判断Chrome浏览器
+    if (isIE) {
+      downLoadUrl(downloadUrlId);
+    }
+    if (isOpera) {
+    }
+    if (isEdge) {
+      downLoadUrl(downloadUrlId);
+    }
+    if (isFF) {
+    }
+    if (isSafari) {
+    }
+    if (isChrome) {
+      downLoadUrl(downloadUrlId);
+    }
+  }
+
+  function downLoadUrl(id) {
+    var url = "http://47.96.187.3:8888/agile/download/word?id=" + id;
+    $.ajax({
+      url: url,
+      type: 'GET',
+      dataType: 'text',
+      contentType: false,
+      processData: false,
+      success: function (data) {
+        var $form = $('<form method="GET"></form>');
+        $form.attr("action", data);
+        $(document.body).append($form);
+        $form.submit();
+      },
+      error: function (data) {
+        alert("下载失败");
+        /*弹出jqXHR对象的信息*/
+      }
+    });
+  }
+
+  //x,y 坐标,radius 半径,process 百分比,backColor 中心颜色, proColor 进度颜色, fontColor 中心文字颜色
+  function DrowProcess(x, y, radius, process, backColor, proColor, fontColor) {
+    var canvas = document.getElementById('myCanvas');
+    if (canvas.getContext) {
+      var cts = canvas.getContext('2d');
+    } else {
+      return;
+    }
+
+    cts.beginPath();
+    // 坐标移动到圆心
+    cts.moveTo(x, y);
+    // 画圆,圆心是24,24,半径24,从角度0开始,画到2PI结束,最后一个参数是方向顺时针还是逆时针
+    cts.arc(x, y, radius, 0, Math.PI * 2, false);
+    cts.closePath();
+    // 填充颜色
+    cts.fillStyle = backColor;
+    cts.fill();
+
+    cts.beginPath();
+    // 画扇形的时候这步很重要,画笔不在圆心画出来的不是扇形
+    cts.moveTo(x, y);
+    // 跟上面的圆唯一的区别在这里,不画满圆,画个扇形
+    cts.arc(x, y, radius, Math.PI * 1.5, Math.PI * 1.5 - Math.PI * 2 * process / 100, true);
+    cts.closePath();
+    cts.fillStyle = proColor;
+    cts.fill();
+
+    //填充背景白色
+    cts.beginPath();
+    cts.moveTo(x, y);
+    cts.arc(x, y, radius - (radius * 0.26), 0, Math.PI * 2, true);
+    cts.closePath();
+    cts.fillStyle = 'rgba(255,255,255,1)';
+    cts.fill();
+
+    // 画一条线
+    cts.beginPath();
+    cts.arc(x, y, radius - (radius * 0.30), 0, Math.PI * 2, true);
+    cts.closePath();
+    // 与画实心圆的区别,fill是填充,stroke是画线
+    cts.strokeStyle = backColor;
+    cts.stroke();
+
+    //在中间写字
+    cts.font = "bold 9pt Arial";
+    cts.fillStyle = fontColor;
+    cts.textAlign = 'center';
+    cts.textBaseline = 'middle';
+    cts.moveTo(x, y);
+    cts.fillText(process + "%", x, y);
+
+  }
+
+  function StartX(x) {
+    DrowProcess(150, 60, 55, bfbx, '#ddd', '#B22222', '#B22222');
+    tx = setTimeout(StartX, 5);
+    if (x == "0") {
+      clearTimeout(tx);
+      bfbx = 0;
+      return;
+    } else {
+      if (bfbx >= 100) {
+        clearTimeout(tx);
+        if (bfbx == 100) {
+          c = setInterval(wordUrl, 2000);//每10秒执行一次checkIsExist方法
+          StartZ(88);
+        }
+        bfbx = 0;
+        return;
+      }
+    }
+    bfbx += 1;
+  }
+
+  function StartY(y) {
+    DrowProcess(260, 60, 55, bfby, '#ddd', '#6495ED', '#6495ED');
+    ty = setTimeout(StartY, 10);
+    if (y == "0") {
+      clearTimeout(ty);
+      bfby = 0;
+      return;
+    } else {
+      if (bfby >= 100) {
+        clearTimeout(ty);
+        bfby = 0;
+        return;
+      }
+    }
+    bfby += 1;
+  }
+
+
+  function StartZ(z) {
+    if (bfbz >= 12) {
+      time_z = 100;
+    }
+    if (bfbz >= 33) {
+      time_z = 300;
+    }
+    if (bfbz >= 74) {
+      time_z = 2000;
+    }
+    if (downloadUrl != undefined && downloadUrl != "") {
+      bfbz = 100;
+      window.clearInterval(c);
+    }
+    DrowProcess(260, 60, 55, bfbz, '#ddd', '#6495ED', '#6495ED');
+    tz = setTimeout(StartZ, time_z);
+    if (z == "0") {
+      clearTimeout(ty);
+      bfbz = 0;
+      return;
+    } else {
+      if (bfbz >= 88) {
+        clearTimeout(tz);
+        bfbz = 0;
+        return;
+      }
+    }
+    bfbz += 1;
+  }
+
+  StartX(0);
+  StartY(0);
+</script>
+</html>
+<!-- IE needs 512+ bytes: https://blogs.msdn.microsoft.com/ieinternals/2010/08/18/friendly-http-error-pages/ -->
